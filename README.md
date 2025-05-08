@@ -19,7 +19,7 @@
 <details open>
   <summary><h2>🔮 About Me</h2></summary>
   <div align="center">
-    <img align="right" alt="Coding" width="300" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjhzZnNqZnJwY2JxamNzamljaWd1OWhva2ZiejQ3bHM4d3Uzeng3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif">
+    <img align="right" alt="Coding" width="300" src="https://media.discordapp.net/attachments/799467932082110465/1333048589609599147/gifmaker_me.gif?ex=681d49fe&is=681bf87e&hm=3f5510d455197c5f121e614d690a26a0ca50ebe6bab3d6a774d1ad26845aa700&=&width=550&height=309">
 
   <p align="left">
     Hello there! I'm <b>Golgrax</b> (Karl Benjamin Bughaw), a passionate software engineer who thrives on creativity and innovation. 
