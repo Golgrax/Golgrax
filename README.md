@@ -71,25 +71,6 @@
   </div>
 </details>
 
----
-
-<details open>
-  <summary><h2>🌟 Featured Projects</h2></summary>
-  <div align="center">
-    <a href="https://github.com/Golgrax/Code-Execution-Bot">
-      <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Golgrax&repo=Code-Execution-Bot&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff" />
-    </a>
-    
- <p>
-      <b>Code-Execution-Bot</b> is a Discord bot that enables users to execute and beautify code in multiple languages including Python, JavaScript, HTML, CSS, Java, and Ruby directly within Discord channels. The bot creates an interactive coding environment for Discord communities.
-    </p>
-
-   <p>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-      <img src="https://img.shields.io/badge/Discord.py-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord.py" />
-    </p>
-  </div>
-</details>
 
 ---
 
