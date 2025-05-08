@@ -78,9 +78,9 @@
   <summary><h2>💬 Discord Presence</h2></summary>
   <div align="center">
     <a href="https://discordapp.com/users/415464095030968320" target="_blank">
-      <img src="https://lanyard.cnrad.dev/api/415464095030968320?theme=dark&animated=true&hideDiscrim=true&borderRadius=10px&idleMessage=Probably%20gaming%20or%20coding..." alt="Discord Status" width="450px" />
+      <img src="https://discord-readme-badge.vercel.app/api?id=415464095030968320" alt="Discord Status" width="320px" />
     </a>
-    
+  </br>
  <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" target="_blank">
       <img src="https://discordapp.com/api/guilds/520499240150106148/widget.png?style=banner4" alt="Discord Server" width="320px" />
     </a>
