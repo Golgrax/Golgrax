@@ -1,4 +1,3 @@
-
 <div align="center">
   <a href="https://github.com/Golgrax" target="_blank">
     <img src="https://capsule-render.vercel.app/api?type=waving&color=a600ff&height=300&section=header&text=Golgrax&fontSize=90&fontAlignY=38&animation=fadeIn&desc=Software%20Engineer%20|%20Digital%20Explorer&descAlignY=55&descAlign=50" width="100%" alt="Golgrax Banner"/>
