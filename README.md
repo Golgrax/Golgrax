@@ -50,8 +50,8 @@
     
 
    <a href="https://github.com/Golgrax">
-      <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=Golgrax&theme=radical&background=141321&ring=a600ff&fire=ff00f7&currStreakLabel=a600ff&hide_border=true" alt="GitHub Streak" />
-    </a>
+   <img src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
+   </a>
     
 
  <a href="https://github.com/Golgrax">
