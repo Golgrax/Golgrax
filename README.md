@@ -40,18 +40,18 @@
   <summary><h2>📊 Statistics</h2></summary>
   <div align="center">
     <a href="https://github.com/Golgrax">
-      <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
+      <img img width="820em" src="https://github-readme-stats.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-      <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
+      <img width="820em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-   <img src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
-   </a>
+      <img width="820em" src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
+    </a>
     
 
  <a href="https://github.com/Golgrax">
@@ -60,12 +60,12 @@
     
 
    <a href="https://github.com/Golgrax">
-      <img src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
+      <img width="820em" src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-      <img src="https://ghchart.rshah.org/a600ff/Golgrax" alt="Golgrax's Github Contribution Chart" />
+      <img width="820em" src="https://ghchart.rshah.org/a600ff/Golgrax" alt="Golgrax's Github Contribution Chart" />
     </a>
   </div>
 </details>
