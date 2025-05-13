@@ -18,7 +18,7 @@
 <details open>
   <summary><h2>🔮 About Me</h2></summary>
   <div align="center">
-    <img align="right" alt="Coding" width="300" src="https://media.discordapp.net/attachments/799467932082110465/1333048589609599147/gifmaker_me.gif?ex=681d49fe&is=681bf87e&hm=3f5510d455197c5f121e614d690a26a0ca50ebe6bab3d6a774d1ad26845aa700&=&width=550&height=309">
+    <img align="right" alt="Coding" width="300" src="https://github.com/Golgrax/Golgrax/blob/main/yeeepeee.gif?raw=true&width=550&height=309">
 
   <p align="left">
     Hello there! I'm <b>Golgrax</b> (Karl Benjamin Bughaw), a passionate software engineer who thrives on creativity and innovation. 
@@ -40,32 +40,32 @@
   <summary><h2>📊 Statistics</h2></summary>
   <div align="center">
     <a href="https://github.com/Golgrax">
-      <img img width="820em" src="https://github-readme-stats.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
+      <img img width="520em" src="https://github-readme-stats.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-      <img width="820em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
+      <img width="520em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-      <img width="820em" src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
+      <img width="520em" src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
     </a>
     
 
  <a href="https://github.com/Golgrax">
-      <img width="820em" src="https://github-readme-activity-graph.vercel.app/graph?username=Golgrax&theme=redical&bg_color=141321&color=a600ff&line=ff00f7&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
+      <img width="520em" src="https://github-readme-activity-graph.vercel.app/graph?username=Golgrax&theme=redical&bg_color=141321&color=a600ff&line=ff00f7&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-      <img width="820em" src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
+      <img width="520em" src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
     </a>
     
 
    <a href="https://github.com/Golgrax">
-      <img width="820em" src="https://ghchart.rshah.org/a600ff/Golgrax" alt="Golgrax's Github Contribution Chart" />
+      <img width="520em" src="https://ghchart.rshah.org/a600ff/Golgrax" alt="Golgrax's Github Contribution Chart" />
     </a>
   </div>
 </details>
