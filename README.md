@@ -1,9 +1,8 @@
 <div align="center">
   <a href="https://github.com/Golgrax" target="_blank">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=a600ff&height=300&section=header&text=Golgrax&fontSize=90&fontAlignY=38&animation=fadeIn&desc=Software%20Engineer%20|%20Digital%20Explorer&descAlignY=55&descAlign=50" width="100%" alt="Golgrax Banner"/>
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=a600ff&height=300&section=header&text=Golgrax&fontSize=90&fontAlignY=38&animation=fadeIn&desc=Software%20Engineer%20|%20OSS%20Advocate&descAlignY=55&descAlign=50" width="100%" alt="Golgrax Banner"/>
   </a>
-
-
+  
   <img src="https://komarev.com/ghpvc/?username=Golgrax&label=Profile%20Visits&color=a600ff&style=for-the-badge" alt="Profile Views" />
   
 
