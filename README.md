@@ -13,21 +13,13 @@
 
 ---
 
-
 <details open>
-  <summary><h2>🔮 About Me</h2></summary>
+  <summary><h2>About Me</h2></summary>
   <div align="center">
-    <img align="right" alt="Coding" width="300" src="https://github.com/Golgrax/Golgrax/blob/main/yeeepeee.gif?raw=true&width=550&height=309">
+    <img align="right" alt="Coding" width="280" src="https://github.com/Golgrax/Golgrax/blob/main/yeeepeee.gif?raw=true">
 
   <p align="left">
-    Hello there! I'm <b>Golgrax</b> (Karl Benjamin Bughaw), a passionate software engineer who thrives on creativity and innovation. 
-    
-   🚀 I specialize in building applications that solve real-world problems
-   🎮 Gaming enthusiast who loves exploring virtual worlds
-   🤖 Creator of Discord bots that enhance community experiences
-   💻 Always exploring new technologies and programming paradigms
-    
-   When I'm not coding, you'll find me gaming, exploring new technologies, or contributing to open-source projects. I believe in the power of technology to transform lives and communities.
+    Hello, my name is Karl Benjamin Bughaw. I am an Information Technology student with a passion of software development. I also enjoy building some practical applications that can solve some real-world challenges (more on Southeast Asia). I am always exploring new technologies and programming concepts to improve my skills. Outside of my studies and coding, I am an avid gamer and enjoy contributing to some open-source projects when I can. I believe in using technology to make a positive impact.
   </p>
   </div>
 </details>
