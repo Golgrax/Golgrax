@@ -71,7 +71,7 @@
       <img src="https://discord-readme-badge.vercel.app/api?id=415464095030968320" alt="Discord Status" width="320px" />
     </a>
   </br>
- <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" target="_blank">
+ <a href="https://discord.gg/peteristhebest" target="_blank">
       <img src="https://discordapp.com/api/guilds/520499240150106148/widget.png?style=banner4" alt="Discord Server" width="320px" />
     </a>
   </div>
