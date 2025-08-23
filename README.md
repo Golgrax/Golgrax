@@ -15,10 +15,10 @@
 
 <details open>
   <summary><h2>About Me</h2></summary>
-  <div align="center">
-    <img align="right" alt="Coding" width="280" src="https://github.com/Golgrax/Golgrax/blob/main/yeeepeee.gif?raw=true">
+  <div align="right">
+    <img align="left" alt="Coding" width="280" src="https://github.com/Golgrax/Golgrax/blob/main/yeeepeee.gif?raw=true">
 
-  <p align="left">
+  <p align="center">
     Hello, my name is Karl Benjamin Bughaw. I enjoy building some practical applications/programs that can solve/imporve some real-world challenges (more on Southeast Asia). I am always exploring new technologies and programming concepts to improve my skills. Outside of my studies and coding, I am an avid gamer and enjoy contributing to some open-source projects when I can. I believe in using technology to make a positive impact.
   </p>
   </div>
@@ -29,7 +29,7 @@
 
 <details open>
   <summary><h2>📊 Statistics</h2></summary>
-  <div align="left">
+  <div align="center">
     <a href="https://github.com/Golgrax">
       <img img width="520em" src="https://github-readme-stats.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
     </a>
@@ -41,13 +41,13 @@
     </a>
   </div>
     
-<div align="right">
+<div align="center">
    <a href="https://github.com/Golgrax">
       <img width="520em" src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
     </a>
 </div>   
 
- <div align="left">
+ <div align="center">
  <a href="https://github.com/Golgrax">
       <img width="520em" src="https://github-readme-activity-graph.vercel.app/graph?username=Golgrax&theme=redical&bg_color=141321&color=a600ff&line=ff00f7&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
     </a>
@@ -59,13 +59,19 @@
     </a>
  </div>
 
- <div align="right">
+ <div align="center">
    <a href="https://github.com/Golgrax">
       <img width="520em" src="https://ghchart.rshah.org/a600ff/Golgrax" alt="Golgrax's Github Contribution Chart" />
     </a>
   </div>
-</details>
 
+<div align="center">
+  <a href="https://github.com/Golgrax">
+    <img align="center" src="https://raw.githubusercontent.com/Golgrax/Golgrax/main/github-metrics.svg" alt="Metrics" />
+  </a>
+</div>
+
+</details>
 
 ---
 
