@@ -37,21 +37,15 @@
     
   <div align="center">
    <a href="https://github.com/Golgrax">
+      <img width="520em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&include_all_commits=true&count_private=true" />
+    </a>
+  </div>
+  
+  <div align="center">
+   <a href="https://github.com/Golgrax">
       <img width="520em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
     </a>
   </div>
-    
-<div align="center">
-   <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
-    </a>
-</div>   
-
- <div align="center">
- <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-readme-activity-graph.vercel.app/graph?username=Golgrax&theme=redical&bg_color=141321&color=a600ff&line=ff00f7&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
-    </a>
- </div>
 
  <div align="center">
    <a href="https://github.com/Golgrax">
@@ -73,7 +67,7 @@
 
 </details>
 
----
+
 
 <details open>
   <summary><h2>💬 Discord Presence</h2></summary>
@@ -138,3 +132,4 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=a600ff&height=100&section=footer" width="100%" />
   
+</div>
