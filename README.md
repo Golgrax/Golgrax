@@ -45,7 +45,7 @@
 <!-- WakaTime Stats Card -->
 <div align="center">
    <a href="https://wakatime.com/@d10b0bee-9be1-4fb1-a885-dfbc5f29be97">
-      <img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api/wakatime?username=Golgrax&theme=radical&layout=compact&langs_count=16&custom_title=WakaTime%20Stats%20(Public%20and%20Private%20Repos)&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
+      <img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api/wakatime?username=Golgrax&theme=radical&layout=compact&langs_count=16&custom_title=WakaTime%20Stats%20(Public%20and%20Private%20Repos)&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&cache_seconds=1800" />
     </a>
 </div>
 
