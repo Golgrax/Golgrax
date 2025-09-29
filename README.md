@@ -29,23 +29,25 @@
 
 <details open>
   <summary><h2>📊 Statistics</h2></summary>
-  <div align="center">
-    <a href="https://github.com/Golgrax">
-      <img img width="520em" src="https://github-readme-stats.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
-    </a>
-   </div>
     
-  <div align="center">
-   <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&include_all_commits=true&count_private=true" />
+<div align="center">
+    <a href="https://github.com/Golgrax">
+      <img img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
     </a>
-  </div>
-  
-  <div align="center">
+</div>
+
+<div align="center">
    <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
+      <img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api/top-langs/?username=Golgrax&layout=compact&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&include_all_commits=true&count_private=true" />
     </a>
-  </div>
+</div>
+
+<!-- WakaTime Stats Card -->
+<div align="center">
+   <a href="https://wakatime.com/@d10b0bee-9be1-4fb1-a885-dfbc5f29be97">
+      <img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api/wakatime?username=Golgrax&theme=radical&layout=compact&langs_count=16&custom_title=WakaTime%20Stats%20(Public%20and%20Private%20Repos)&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true" />
+    </a>
+</div>
 
  <div align="center">
    <a href="https://github.com/Golgrax">
