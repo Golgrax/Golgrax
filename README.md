@@ -1,9 +1,8 @@
 <div align="center">
+  <img width="1020em" src="https://komarev.com/ghpvc/?username=Golgrax&label=Profile%20Visits&color=a600ff&style=for-the-badge" alt="Profile Views" />
   <a href="https://github.com/Golgrax" target="_blank">
     <img src="https://capsule-render.vercel.app/api?type=waving&color=a600ff&height=300&section=header&text=Golgrax&fontSize=90&fontAlignY=38&animation=fadeIn&desc=Software%20Engineer%20|%20OSS%20Advocate&descAlignY=55&descAlign=50" width="100%" alt="Golgrax Banner"/>
   </a>
-  
-  <img src="https://komarev.com/ghpvc/?username=Golgrax&label=Profile%20Visits&color=a600ff&style=for-the-badge" alt="Profile Views" />
   
 
   <p align="center">
@@ -32,7 +31,7 @@
     
 <div align="center">
     <a href="https://github.com/Golgrax">
-      <img img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
+      <img width="520em" src="https://github-readme-stats-theta-bice.vercel.app/api?username=Golgrax&show_icons=true&count_private=true&theme=radical&title_color=a600ff&text_color=ffffff&bg_color=141321&hide_border=true&icon_color=a600ff&ring_color=ff00f7&include_all_commits=true" />
     </a>
 </div>
 
@@ -63,7 +62,7 @@
 
  <div align="center">
    <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
+      <img width="920em" src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
     </a>
  </div>
 
@@ -75,7 +74,7 @@
 
 <div align="center">
   <a href="https://github.com/Golgrax">
-    <img align="center" src="https://raw.githubusercontent.com/Golgrax/Golgrax/main/github-metrics.svg" alt="Metrics" />
+    <img width="640em" src="https://raw.githubusercontent.com/Golgrax/Golgrax/main/github-metrics.svg" alt="Metrics" />
   </a>
 </div>
 
@@ -87,7 +86,7 @@
   <summary><h2>💬 Discord Presence</h2></summary>
   <div align="center">
     <a href="https://discordapp.com/users/415464095030968320" target="_blank">
-      <img src="https://discord-readme-badge.vercel.app/api?id=415464095030968320" alt="Discord Status" width="320px" />
+      <img width="320em" src="https://discord-readme-badge.vercel.app/api?id=415464095030968320" alt="Discord Status" width="320px" />
     </a>
   </br>
 </details>
