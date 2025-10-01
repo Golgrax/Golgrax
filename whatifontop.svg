@@ -1,51 +1,46 @@
-<svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="background-color: #555555; display: block;">
+  <!-- idk if this is better -->
+<svg width="100%" height="100%" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="background-color: #121212; display: block;">
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="800" height="12" fill="#A600FF"/>
+  
+  <!-- Bottom Accent Bar -->
+  <rect x="0" y="388" width="800" height="12" fill="#A600FF"/>
+
   <!-- IDE Window Frame -->
-  <rect x="50" y="50" width="700" height="500" rx="12" ry="12" fill="#FFFFFF" stroke="#A600FF" stroke-width="2"/>
+  <rect x="50" y="20" width="700" height="360" rx="10" ry="10" fill="#1E1E1E" stroke="#A600FF" stroke-width="1.5"/>
   
-
   <!-- Main Content Area -->
-  <rect x="60" y="90" width="680" height="440" fill="#FFFFFF" stroke="#A600FF" stroke-width="1"/>
+  <rect x="60" y="50" width="680" height="320" fill="#1E1E1E" stroke="#A600FF" stroke-width="0.8"/>
   
-  <!-- Bottom Footer Line -->
-  <rect x="25.5" y="560" width="750" height="20" rx="" ry="10" fill="#A600FF"/>
-  <!-- Top Line -->
-  <rect x="25.5" y="20" width="750" height="20" rx="" ry="10" fill="#A600FF"/>
- 
-  <!-- Highlight Design Elements -->
-  <!-- Left Sidebar Icons (Symbolic, no text) -->
-  <polygon points="80,130 95,120 110,130 110,150 95,160 80,150" fill="#A600FF" opacity="0.8"/>
-  <polygon points="80,180 95,170 110,180 110,200 95,210 80,200" fill="#A600FF" opacity="0.6"/>
-  <polygon points="80,230 95,220 110,230 110,250 95,260 80,250" fill="#A600FF" opacity="0.8"/>
-  <polygon points="80,280 95,270 110,280 110,300 95,310 80,300" fill="#A600FF" opacity="0.6"/>
-  <polygon points="80,330 95,320 110,330 110,350 95,360 80,350" fill="#A600FF" opacity="0.8"/>
+  <!-- Left Sidebar Icons -->
+  <polygon points="80,90 92,82 104,90 104,106 92,114 80,106" fill="#A600FF" opacity="0.8"/>
+  <polygon points="80,125 92,117 104,125 104,141 92,149 80,141" fill="#A600FF" opacity="0.6"/>
+  <polygon points="80,160 92,152 104,160 104,176 92,184 80,176" fill="#A600FF" opacity="0.8"/>
+  <polygon points="80,195 92,187 104,195 104,211 92,219 80,211" fill="#A600FF" opacity="0.6"/>
+  <polygon points="80,230 92,222 104,230 104,246 92,254 80,246" fill="#A600FF" opacity="0.8"/>
   
-<!-- Right Arrow Indicators (Fixed) -->
-<polygon points="120,135 130,140 120,145" fill="#A600FF" opacity="0.3"/>
-<polygon points="120,185 130,190 120,195" fill="#A600FF" opacity="0.3"/>
-<polygon points="120,235 130,240 120,245" fill="#A600FF" opacity="0.3"/>
-<polygon points="120,285 130,290 120,295" fill="#A600FF" opacity="0.3"/>
-<polygon points="120,335 130,340 120,345" fill="#A600FF" opacity="0.3"/>
+  <!-- left side right arrows -->
+  <polygon points="115,93 123,98 115,103" fill="#A600FF" opacity="0.4"/>
+  <polygon points="115,128 123,133 115,138" fill="#A600FF" opacity="0.4"/>
+  <polygon points="115,163 123,168 115,173" fill="#A600FF" opacity="0.4"/>
+  <polygon points="115,198 123,203 115,208" fill="#A600FF" opacity="0.4"/>
+  <polygon points="115,233 123,238 115,243" fill="#A600FF" opacity="0.4"/>
 
-  <!-- Internal Panel -->
-  <rect x="150" y="100" width="580" height="380" rx="6" ry="6" fill="#FFFFFF" stroke="#A600FF" stroke-width="1"/>
+  <!-- internal panel -->
+  <rect x="140" y="60" width="600" height="280" rx="5" ry="5" fill="#252526" stroke="#A600FF" stroke-width="0.8"/>
   
-  <!-- Header Row in Panel -->
-  <rect x="150" y="100" width="580" height="20" fill="#0" stroke="#A600FF" stroke-width="0.5"/>
+  <!-- Header Row inside yo supa panel -->
+  <rect x="140" y="60" width="600" height="16" fill="#2D2D2D" stroke="#A600FF" stroke-width="0.4"/>
   
-  <!-- Column Headers (Symbolic - no text) -->
-  <rect x="450" y="105" width="30" height="10" fill="#A600FF" opacity="0.7"/>
-  <rect x="490" y="105" width="30" height="10" fill="#B00B69" opacity="0.7"/>
-  <rect x="530" y="105" width="30" height="10" fill="#A600FF" opacity="0.7"/>
-  <rect x="570" y="105" width="30" height="10" fill="#B00B69" opacity="0.7"/>
+  <!-- column heads -->
+  <rect x="420" y="64" width="24" height="8" fill="#A600FF" opacity="0.8"/>
+  <rect x="455" y="64" width="24" height="8" fill="#B00B69" opacity="0.8"/>
+  <rect x="490" y="64" width="24" height="8" fill="#A600FF" opacity="0.8"/>
+  <rect x="525" y="64" width="24" height="8" fill="#B00B69" opacity="0.8"/>
 
-<!-- pfp -->
-<rect x="180" y="180" width="120" height="120" rx="5" ry="5" fill="#A600FF"/>
-<!-- description -->
-<rect x="340" y="180" width="360" height="260" rx="5" ry="5" fill="#6901A6"/>
+  <!-- pfp -->
+  <rect x="160" y="110" width="100" height="100" rx="6" ry="6" fill="#A600FF" opacity="0.9"/>
 
-
-
-<!-- Soft inner highlight for depth -->
-<rect x="52" y="541" width="696" height="8" rx="4" ry="4" fill="white" opacity="0.1"/>
-
+  <!-- description -->
+  <rect x="280" y="110" width="440" height="210" rx="6" ry="6" fill="#33004D" opacity="0.85"/>
 </svg>
