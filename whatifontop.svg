@@ -1,0 +1,51 @@
+<svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="background-color: #555555; display: block;">
+  <!-- IDE Window Frame -->
+  <rect x="50" y="50" width="700" height="500" rx="12" ry="12" fill="#FFFFFF" stroke="#A600FF" stroke-width="2"/>
+  
+
+  <!-- Main Content Area -->
+  <rect x="60" y="90" width="680" height="440" fill="#FFFFFF" stroke="#A600FF" stroke-width="1"/>
+  
+  <!-- Bottom Footer Line -->
+  <rect x="25.5" y="560" width="750" height="20" rx="" ry="10" fill="#A600FF"/>
+  <!-- Top Line -->
+  <rect x="25.5" y="20" width="750" height="20" rx="" ry="10" fill="#A600FF"/>
+ 
+  <!-- Highlight Design Elements -->
+  <!-- Left Sidebar Icons (Symbolic, no text) -->
+  <polygon points="80,130 95,120 110,130 110,150 95,160 80,150" fill="#A600FF" opacity="0.8"/>
+  <polygon points="80,180 95,170 110,180 110,200 95,210 80,200" fill="#A600FF" opacity="0.6"/>
+  <polygon points="80,230 95,220 110,230 110,250 95,260 80,250" fill="#A600FF" opacity="0.8"/>
+  <polygon points="80,280 95,270 110,280 110,300 95,310 80,300" fill="#A600FF" opacity="0.6"/>
+  <polygon points="80,330 95,320 110,330 110,350 95,360 80,350" fill="#A600FF" opacity="0.8"/>
+  
+<!-- Right Arrow Indicators (Fixed) -->
+<polygon points="120,135 130,140 120,145" fill="#A600FF" opacity="0.3"/>
+<polygon points="120,185 130,190 120,195" fill="#A600FF" opacity="0.3"/>
+<polygon points="120,235 130,240 120,245" fill="#A600FF" opacity="0.3"/>
+<polygon points="120,285 130,290 120,295" fill="#A600FF" opacity="0.3"/>
+<polygon points="120,335 130,340 120,345" fill="#A600FF" opacity="0.3"/>
+
+  <!-- Internal Panel -->
+  <rect x="150" y="100" width="580" height="380" rx="6" ry="6" fill="#FFFFFF" stroke="#A600FF" stroke-width="1"/>
+  
+  <!-- Header Row in Panel -->
+  <rect x="150" y="100" width="580" height="20" fill="#0" stroke="#A600FF" stroke-width="0.5"/>
+  
+  <!-- Column Headers (Symbolic - no text) -->
+  <rect x="450" y="105" width="30" height="10" fill="#A600FF" opacity="0.7"/>
+  <rect x="490" y="105" width="30" height="10" fill="#B00B69" opacity="0.7"/>
+  <rect x="530" y="105" width="30" height="10" fill="#A600FF" opacity="0.7"/>
+  <rect x="570" y="105" width="30" height="10" fill="#B00B69" opacity="0.7"/>
+
+<!-- pfp -->
+<rect x="180" y="180" width="120" height="120" rx="5" ry="5" fill="#A600FF"/>
+<!-- description -->
+<rect x="340" y="180" width="360" height="260" rx="5" ry="5" fill="#6901A6"/>
+
+
+
+<!-- Soft inner highlight for depth -->
+<rect x="52" y="541" width="696" height="8" rx="4" ry="4" fill="white" opacity="0.1"/>
+
+</svg>
