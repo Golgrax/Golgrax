@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Golgrax/Golgrax/refs/heads/main/whatifontop.svg" alt="in progress yet" />
+  <img src="https://raw.githubusercontent.com/Golgrax/svg-profile/refs/heads/main/output/profile.svg" alt="in progress yet" />
 
 <div align="center">
   <img width="1020em" src="https://komarev.com/ghpvc/?username=Golgrax&label=Profile%20Visits&color=a600ff&style=for-the-badge" alt="Profile Views" />
