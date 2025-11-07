@@ -1,27 +1,15 @@
 #!/usr/bin/env node
 // Robust repo-count badge generator:
+// - Accepts token via GH_API_TOKEN (falls back to GITHUB_TOKEN).
 // - Queries both user(login:) and organization(login:) so it works for user or org owners.
-// - Does not hard-fail the workflow on missing token or API errors; writes a fallback SVG instead.
-// - Counts all repositories (privacy: ALL). To include private repos for orgs or users, set secret GH_PAT.
+// - Does NOT fail the workflow on missing token/API errors; writes a fallback SVG instead.
+// - Counts all repositories (privacy: ALL).
 
 const fs = require('fs');
 const https = require('https');
 
-const token = process.env.GH_API_TOKEN || process.env.GITHUB_TOKEN;
+const token = process.env.GH_API_TOKEN || process.env.GITHUB_TOKEN || '';
 const username = process.env.GH_USERNAME || process.env.GITHUB_REPOSITORY_OWNER || '';
-
-function writeFallbackSVG(message) {
-  const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="88" viewBox="0 0 360 88" role="img" aria-labelledby="title desc">
-  <title id="title">Repo count unavailable</title>
-  <desc id="desc">${message}</desc>
-  <rect rx="14" ry="14" width="360" height="88" fill="#111827"/>
-  <text x="24" y="46" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-size="14" fill="#fff">Repositories: unavailable — ${escapeXml(message)}</text>
-</svg>`;
-  if (!fs.existsSync('assets')) fs.mkdirSync('assets', { recursive: true });
-  fs.writeFileSync('assets/repo-count.svg', svg, 'utf8');
-  console.log('Wrote fallback assets/repo-count.svg');
-}
 
 function escapeXml(unsafe) {
   return String(unsafe).replace(/[<>&'"]/g, (c) => ({
@@ -33,14 +21,29 @@ function escapeXml(unsafe) {
   }[c]));
 }
 
-if (!username) {
-  console.error('Missing GH_USERNAME or repository owner. Writing fallback badge.');
-  writeFallbackSVG('missing owner');
-  process.exit(0); // graceful exit to avoid failing the workflow
+function writeFallbackSVG(message) {
+  const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="88" viewBox="0 0 360 88" role="img" aria-labelledby="title desc">
+  <title id="title">Repo count unavailable</title>
+  <desc id="desc">${escapeXml(message)}</desc>
+  <rect rx="14" ry="14" width="360" height="88" fill="#111827"/>
+  <text x="24" y="46" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-size="14" fill="#fff">Repositories: unavailable — ${escapeXml(message)}</text>
+</svg>`;
+  if (!fs.existsSync('assets')) fs.mkdirSync('assets', { recursive: true });
+  fs.writeFileSync('assets/repo-count.svg', svg, 'utf8');
+  console.log('Wrote fallback assets/repo-count.svg');
 }
 
+// If no owner, write fallback and exit gracefully
+if (!username) {
+  console.warn('Missing owner; writing fallback badge.');
+  writeFallbackSVG('missing owner');
+  process.exit(0);
+}
+
+// If no token, write fallback and exit gracefully (so workflow doesn't fail)
 if (!token) {
-  console.warn('No API token found (GH_API_TOKEN or GITHUB_TOKEN). Writing fallback badge. Set GH_PAT secret to include private repos.');
+  console.warn('No token provided (GH_API_TOKEN or GITHUB_TOKEN). Writing fallback badge. Set secret MY_TOKEN or GH_PAT if you want counts.');
   writeFallbackSVG('no token');
   process.exit(0);
 }
@@ -80,9 +83,9 @@ const req = https.request(options, (res) => {
     try {
       const json = JSON.parse(body);
       if (json.errors && json.errors.length) {
-        console.error('GraphQL returned errors:', JSON.stringify(json.errors, null, 2));
+        console.error('GraphQL errors:', JSON.stringify(json.errors, null, 2));
         writeFallbackSVG('api error');
-        return process.exit(0);
+        return;
       }
 
       const user = json.data && json.data.user;
@@ -98,7 +101,7 @@ const req = https.request(options, (res) => {
         console.error('Could not determine repository count from response. Writing fallback badge.');
         console.error('Response:', JSON.stringify(json, null, 2));
         writeFallbackSVG('no data');
-        return process.exit(0);
+        return;
       }
 
       const svg = makeBadgeSVG(username, total);
@@ -109,7 +112,6 @@ const req = https.request(options, (res) => {
     } catch (err) {
       console.error('Failed to parse response or other error:', err);
       writeFallbackSVG('parse error');
-      return process.exit(0);
     }
   });
 });
@@ -117,7 +119,6 @@ const req = https.request(options, (res) => {
 req.on('error', (err) => {
   console.error('Request error', err);
   writeFallbackSVG('request error');
-  process.exit(0);
 });
 
 req.write(query);
