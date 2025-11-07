@@ -2,12 +2,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="72" viewBox="0 0 360 72" role="img" aria-labelledby="title desc">
   <title id="title">Repositories</title>
   <desc id="desc">no token / no public count</desc>
-  <defs>
-    <linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#0ea5a4"/><stop offset="100%" stop-color="#0b1220"/></linearGradient>
-  </defs>
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#0ea5a4"/><stop offset="100%" stop-color="#0b1220"/></linearGradient></defs>
   <rect rx="12" width="360" height="72" fill="url(#g)"/>
   <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" fill="#fff">
     <text x="20" y="36" font-size="16" font-weight="700">Repositories</text>
-    <text x="20" y="54" font-size="12" opacity="0.9">Unavailable — no token / no public count</text>
+    <text x="20" y="54" font-size="12" opacity="0.9">no token / no public count</text>
   </g>
 </svg>
