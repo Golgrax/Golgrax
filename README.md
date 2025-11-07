@@ -31,6 +31,8 @@
 
 <details open>
   <summary><h2>📊 Statistics</h2></summary>
+
+  ![Repositories](./assets/repo-count.svg)
     
 <div align="center">
     <a href="https://github.com/Golgrax">
