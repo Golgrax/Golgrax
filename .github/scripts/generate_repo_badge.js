@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // Robust repo-count badge generator:
-// - Accepts token via GH_API_TOKEN (falls back to GITHUB_TOKEN).
-// - Queries both user(login:) and organization(login:) so it works for user or org owners.
-// - Does NOT fail the workflow on missing token/API errors; writes a fallback SVG instead.
-// - Counts all repositories (privacy: ALL).
+// - Uses GraphQL if a token exists (accurate count, includes private when token has scopes).
+// - If no token, tries REST fallback to get public repo count (so you won't see "unavailable").
+// - Never fails the workflow on missing token / API error; instead writes a readable badge/fallback.
+// - Accepts token via GH_API_TOKEN (workflow sets this from secrets.MY_TOKEN || secrets.GH_PAT || github.token).
 
 const fs = require('fs');
 const https = require('https');
@@ -21,122 +21,43 @@ function escapeXml(unsafe) {
   }[c]));
 }
 
-function writeFallbackSVG(message) {
-  const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="88" viewBox="0 0 360 88" role="img" aria-labelledby="title desc">
-  <title id="title">Repo count unavailable</title>
-  <desc id="desc">${escapeXml(message)}</desc>
-  <rect rx="14" ry="14" width="360" height="88" fill="#111827"/>
-  <text x="24" y="46" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" font-size="14" fill="#fff">Repositories: unavailable — ${escapeXml(message)}</text>
-</svg>`;
+function writeSVG(svg) {
   if (!fs.existsSync('assets')) fs.mkdirSync('assets', { recursive: true });
   fs.writeFileSync('assets/repo-count.svg', svg, 'utf8');
-  console.log('Wrote fallback assets/repo-count.svg');
+  console.log('Wrote assets/repo-count.svg');
 }
 
-// If no owner, write fallback and exit gracefully
-if (!username) {
-  console.warn('Missing owner; writing fallback badge.');
-  writeFallbackSVG('missing owner');
-  process.exit(0);
+function makeNiceFallback(message) {
+  // Better-looking fallback SVG for when we don't have a count
+  const w = 360, h = 72;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">
+  <title id="title">Repositories</title>
+  <desc id="desc">${escapeXml(message)}</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#0ea5a4"/><stop offset="100%" stop-color="#0b1220"/></linearGradient>
+  </defs>
+  <rect rx="12" width="${w}" height="${h}" fill="url(#g)"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial" fill="#fff">
+    <text x="20" y="36" font-size="16" font-weight="700">Repositories</text>
+    <text x="20" y="54" font-size="12" opacity="0.9">Unavailable — ${escapeXml(message)}</text>
+  </g>
+</svg>`;
 }
 
-// If no token, write fallback and exit gracefully (so workflow doesn't fail)
-if (!token) {
-  console.warn('No token provided (GH_API_TOKEN or GITHUB_TOKEN). Writing fallback badge. Set secret MY_TOKEN or GH_PAT if you want counts.');
-  writeFallbackSVG('no token');
-  process.exit(0);
-}
-
-const query = JSON.stringify({
-  query: `query ($login: String!) {
-    user(login: $login) {
-      repositories(privacy: ALL) {
-        totalCount
-      }
-    }
-    organization(login: $login) {
-      repositories(privacy: ALL) {
-        totalCount
-      }
-    }
-  }`,
-  variables: { login: username },
-});
-
-const options = {
-  hostname: 'api.github.com',
-  path: '/graphql',
-  method: 'POST',
-  headers: {
-    'User-Agent': `${username}-repo-count-badge`,
-    Authorization: `bearer ${token}`,
-    'Content-Type': 'application/json',
-    'Content-Length': Buffer.byteLength(query, 'utf8'),
-  },
-};
-
-const req = https.request(options, (res) => {
-  let body = '';
-  res.on('data', (chunk) => (body += chunk));
-  res.on('end', () => {
-    try {
-      const json = JSON.parse(body);
-      if (json.errors && json.errors.length) {
-        console.error('GraphQL errors:', JSON.stringify(json.errors, null, 2));
-        writeFallbackSVG('api error');
-        return;
-      }
-
-      const user = json.data && json.data.user;
-      const org = json.data && json.data.organization;
-      let total = null;
-      if (user && user.repositories && typeof user.repositories.totalCount === 'number') {
-        total = user.repositories.totalCount;
-      } else if (org && org.repositories && typeof org.repositories.totalCount === 'number') {
-        total = org.repositories.totalCount;
-      }
-
-      if (total === null) {
-        console.error('Could not determine repository count from response. Writing fallback badge.');
-        console.error('Response:', JSON.stringify(json, null, 2));
-        writeFallbackSVG('no data');
-        return;
-      }
-
-      const svg = makeBadgeSVG(username, total);
-      const outPath = 'assets/repo-count.svg';
-      if (!fs.existsSync('assets')) fs.mkdirSync('assets', { recursive: true });
-      fs.writeFileSync(outPath, svg, 'utf8');
-      console.log('Wrote', outPath);
-    } catch (err) {
-      console.error('Failed to parse response or other error:', err);
-      writeFallbackSVG('parse error');
-    }
-  });
-});
-
-req.on('error', (err) => {
-  console.error('Request error', err);
-  writeFallbackSVG('request error');
-});
-
-req.write(query);
-req.end();
-
-function makeBadgeSVG(user, count) {
+function makeBadgeSVG(user, count, note = 'Total repos (all)') {
   const label = 'Repositories';
   const display = String(count);
   const width = 360;
   const height = 88;
-  const leftColor = '#0ea5a4'; // teal
-  const rightColor = '#0b1220'; // dark
+  const leftColor = '#0ea5a4';
+  const rightColor = '#0b1220';
   const accent = '#06b6d4';
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(user)} - ${label} badge</title>
-  <desc id="desc">Shows the total repository count for ${escapeXml(user)} on GitHub</desc>
+  <desc id="desc">Shows the repository count for ${escapeXml(user)}</desc>
   <defs>
     <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0%" stop-color="${leftColor}" stop-opacity="0.98"/>
@@ -149,21 +70,129 @@ function makeBadgeSVG(user, count) {
 
   <rect rx="14" ry="14" width="${width}" height="${height}" fill="url(#g)" filter="url(#shadow)"/>
 
-  <!-- Left: icon + username -->
-  <g transform="translate(22,22)" fill="#fff" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial">
+  <g transform="translate(20,20)" fill="#fff" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial">
+    <!-- Simple octocat glyph -->
     <g transform="translate(0,0) scale(1)" fill="#fff" aria-hidden="true">
-      <path d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.238-.009-.868-.014-1.703-2.782.603-3.369-1.342-3.369-1.342-.455-1.156-1.11-1.464-1.11-1.464-.907-.62.069-.607.069-.607 1.003.071 1.532 1.031 1.532 1.031.892 1.528 2.341 1.087 2.91.832.091-.647.349-1.087.634-1.337-2.22-.252-4.556-1.112-4.556-4.948 0-1.093.39-1.987 1.03-2.686-.103-.253-.447-1.27.098-2.647 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0110 5.8c.85.004 1.705.115 2.504.338 1.909-1.295 2.748-1.026 2.748-1.026.546 1.378.202 2.394.1 2.647.64.699 1.03 1.593 1.03 2.686 0 3.846-2.339 4.693-4.567 4.94.359.309.679.92.679 1.854 0 1.337-.012 2.416-.012 2.745 0 .268.18.579.688.481A10.013 10.013 0 0020 10C20 4.477 15.523 0 10 0z"/>
+      <path d="M10 0C4.48 0 0 4.48 0 10c0 4.42 2.87 8.16 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.54 1.03 1.54 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.57 9.57 0 0110 5.8c.85.00 1.71.12 2.5.34 1.91-1.29 2.75-1.03 2.75-1.03.55 1.38.2 2.39.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85 0 1.34-.01 2.42-.01 2.74 0 .27.18.58.69.48A10.01 10.01 0 0020 10C20 4.48 15.52 0 10 0z"/>
     </g>
 
-    <text x="72" y="30" font-size="22" font-weight="700" fill="#fff">${escapeXml(user)}</text>
-    <text x="72" y="52" font-size="12" fill="#e6f6f6" opacity="0.95">${label}</text>
+    <text x="62" y="28" font-size="20" font-weight="700">${escapeXml(user)}</text>
+    <text x="62" y="46" font-size="12" opacity="0.9">${label}</text>
   </g>
 
-  <!-- Right: repo count -->
-  <g transform="translate(${width - 170}, 22)">
-    <rect rx="12" ry="12" width="140" height="44" fill="#010617" opacity="0.06"></rect>
-    <text x="70" y="30" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="30" font-weight="900" fill="${accent}" text-anchor="middle">${display}</text>
-    <text x="70" y="46" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="10" fill="#cfeefc" text-anchor="middle" opacity="0.9">Total repos (all languages & forks)</text>
+  <g transform="translate(${width - 180}, 22)">
+    <rect rx="12" ry="12" width="150" height="44" fill="#010617" opacity="0.06"></rect>
+    <text x="75" y="30" font-size="30" font-weight="900" fill="${accent}" text-anchor="middle">${display}</text>
+    <text x="75" y="46" font-size="10" fill="#cfeefc" text-anchor="middle" opacity="0.9">${escapeXml(note)}</text>
   </g>
 </svg>`;
 }
+
+// Helpers for HTTPS calls
+function httpsRequest(opts, body) {
+  return new Promise((resolve, reject) => {
+    const req = https.request(opts, (res) => {
+      let data = '';
+      res.on('data', (c) => (data += c));
+      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: data }));
+    });
+    req.on('error', reject);
+    if (body) req.write(body);
+    req.end();
+  });
+}
+
+(async () => {
+  if (!username) {
+    console.warn('Missing owner; writing fallback badge.');
+    writeSVG(makeNiceFallback('missing owner'));
+    return;
+  }
+
+  // 1) If we have a token, prefer GraphQL (accurate total, includes private repos if token scopes allow)
+  if (token) {
+    try {
+      const gql = JSON.stringify({
+        query: `query ($login: String!) {
+          user(login: $login) { repositories(privacy: ALL) { totalCount } }
+          organization(login: $login) { repositories(privacy: ALL) { totalCount } }
+        }`,
+        variables: { login: username },
+      });
+
+      const opts = {
+        hostname: 'api.github.com',
+        path: '/graphql',
+        method: 'POST',
+        headers: {
+          'User-Agent': `${username}-repo-count-badge`,
+          Authorization: `bearer ${token}`,
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(gql, 'utf8'),
+        },
+      };
+
+      const res = await httpsRequest(opts, gql);
+      const json = JSON.parse(res.body || '{}');
+
+      if (json.errors && json.errors.length) {
+        console.warn('GraphQL returned errors, falling back to REST for public count.');
+      } else {
+        const user = json.data && json.data.user;
+        const org = json.data && json.data.organization;
+        let total = null;
+        if (user && user.repositories && typeof user.repositories.totalCount === 'number') {
+          total = user.repositories.totalCount;
+        } else if (org && org.repositories && typeof org.repositories.totalCount === 'number') {
+          total = org.repositories.totalCount;
+        }
+
+        if (total !== null) {
+          writeSVG(makeBadgeSVG(username, total, 'Total repos (all)'));
+          return;
+        }
+      }
+    } catch (err) {
+      console.warn('GraphQL request failed:', err.message || err);
+      // continue to REST fallback
+    }
+  }
+
+  // 2) No token or GraphQL failed: try REST to get public repo count (works without token)
+  try {
+    // prefer /users/:username
+    const headers = { 'User-Agent': `${username}-repo-count-badge` };
+    if (token) headers['Authorization'] = `bearer ${token}`;
+
+    const userOpts = { hostname: 'api.github.com', path: `/users/${encodeURIComponent(username)}`, method: 'GET', headers };
+    let r = await httpsRequest(userOpts);
+    if (r.status === 200) {
+      const body = JSON.parse(r.body || '{}');
+      if (typeof body.public_repos === 'number') {
+        writeSVG(makeBadgeSVG(username, body.public_repos, 'Public repos'));
+        return;
+      }
+    }
+
+    // if /users failed, try /orgs/:org
+    const orgOpts = { hostname: 'api.github.com', path: `/orgs/${encodeURIComponent(username)}`, method: 'GET', headers };
+    r = await httpsRequest(orgOpts);
+    if (r.status === 200) {
+      const body = JSON.parse(r.body || '{}');
+      // org object also contains public_repos
+      if (typeof body.public_repos === 'number') {
+        writeSVG(makeBadgeSVG(username, body.public_repos, 'Public repos (org)'));
+        return;
+      }
+    }
+
+    // nothing worked
+    console.warn('REST fallback did not return a public repo count.');
+    writeSVG(makeNiceFallback('no token / no public count'));
+    return;
+  } catch (err) {
+    console.warn('REST request failed:', err.message || err);
+    writeSVG(makeNiceFallback('request error'));
+    return;
+  }
+})();
