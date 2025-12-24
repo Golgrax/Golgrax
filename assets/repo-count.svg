@@ -24,7 +24,7 @@
 
   <g transform="translate(180, 22)">
     <rect rx="12" ry="12" width="150" height="44" fill="#010617" opacity="0.06"></rect>
-    <text x="75" y="30" font-size="30" font-weight="900" fill="#06b6d4" text-anchor="middle">106</text>
+    <text x="75" y="30" font-size="30" font-weight="900" fill="#06b6d4" text-anchor="middle">107</text>
     <text x="75" y="46" font-size="10" fill="#cfeefc" text-anchor="middle" opacity="0.9">Public repos</text>
   </g>
 </svg>
