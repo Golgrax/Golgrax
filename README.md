@@ -45,29 +45,7 @@
     </a>
 </div>
 
-<div align="center">
-   <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-readme-streak-stats.herokuapp.com?user=Golgrax&theme=radical&hide_border=true&border_radius=20" alt="GitHub Streak" />
-    </a>
-</div>   
 
- <div align="center">
- <a href="https://github.com/Golgrax">
-      <img width="520em" src="https://github-readme-activity-graph.vercel.app/graph?username=Golgrax&theme=redical&bg_color=141321&color=a600ff&line=ff00f7&point=ffffff&area=true&hide_border=true" alt="Activity Graph" />
-    </a>
- </div>
-
- <div align="center">
-   <a href="https://github.com/Golgrax">
-      <img width="920em" src="https://github-profile-trophy.vercel.app/?username=Golgrax&theme=radical&column=-1&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
-    </a>
- </div>
-
-<div align="center">
-  <a href="https://github.com/Golgrax">
-    <img width="640em" src="https://raw.githubusercontent.com/Golgrax/Golgrax/main/github-metrics.svg" alt="Metrics" />
-  </a>
-</div>
 
 </details>
 
