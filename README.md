@@ -44,6 +44,11 @@
       <img src="https://wakatime.com/share/@Golgrax/cf55f945-c595-4a2e-bccf-6647ee779617.svg" width="520" alt="WakaTime Stats" />
    </a>
 </div>
+<div align="center">
+   <a href="https://wakatime.com">
+      <img src="https://wakatime.com/share/@Golgrax/b4601688-f3ab-4d27-ae62-8146aff295f0.png" width="520" alt="WakaTime Stats" />
+   </a>
+</div>
 
 
 
